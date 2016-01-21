@@ -1,9 +1,9 @@
 package com.github.dockerjava.api.command;
 
+import com.github.dockerjava.core.DockerClientConfig;
+
 import java.io.Closeable;
 import java.io.IOException;
-
-import com.github.dockerjava.core.DockerClientConfig;
 
 public interface DockerCmdExecFactory extends Closeable {
 
@@ -81,7 +81,8 @@ public interface DockerCmdExecFactory extends Closeable {
 
     public StatsCmd.Exec createStatsCmdExec();
 
+    public ExportContainerCmd.Exec createExportContainerExec();
+
     @Override
     public void close() throws IOException;
-
 }
