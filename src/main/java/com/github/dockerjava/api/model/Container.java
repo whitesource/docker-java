@@ -1,11 +1,10 @@
 package com.github.dockerjava.api.model;
 
-import java.util.Map;
-
-import org.apache.commons.lang.builder.ToStringBuilder;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
+import java.util.Map;
 
 /**
  *
@@ -39,6 +38,9 @@ public class Container {
     @JsonProperty("Status")
     private String status;
 
+    @JsonProperty("SizeRootFs")
+    private long size;
+
     public String getId() {
         return id;
     }
@@ -69,6 +71,10 @@ public class Container {
 
     public String[] getNames() {
         return names;
+    }
+
+    public long getSize() {
+        return size;
     }
 
     @Override
